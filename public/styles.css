@@ -20,7 +20,7 @@
 
 /* Body and Main Layout */
 body {
-    font-family: 'Federant', cursive, serif;
+    font-family: 'Work Sans', sans-serif;
     background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(16,16,32,0.8)); 
     color: #ffffff;
     height: 100vh;
@@ -69,7 +69,7 @@ header h1 {
 }
 
 header p {
-    font-family: 'Kalam', cursive;
+    font-family: 'Work Sans', sans-serif;
     font-size: 1.3rem;
     opacity: 0.95;
     font-weight: 400;
@@ -104,7 +104,7 @@ header p {
 }
 
 .neon-text-sub {
-    font-family: 'Kalam', cursive;
+    font-family: 'Work Sans', sans-serif;
     font-size: 1.2rem;
     opacity: 0.95;
     font-weight: 400;
@@ -124,7 +124,7 @@ header p {
         0 0 6px #00ffff,
         0 0 9px #00ffff;
     animation: subtleGlow 2s ease-in-out infinite alternate;
-    font-family: 'Federant', cursive, serif;
+    font-family: 'Work Sans', sans-serif;
 }
 
 /* Input Styles */
@@ -138,7 +138,7 @@ header p {
     font-size: 1rem;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    font-family: 'Federant', cursive, serif;
+    font-family: 'Work Sans', sans-serif;
     box-shadow: 
         0 0 15px rgba(0, 255, 255, 0.3),
         inset 0 0 10px rgba(0, 255, 255, 0.1);
@@ -146,7 +146,7 @@ header p {
 
 .neon-input::placeholder {
     color: rgba(0, 255, 255, 0.7);
-    font-family: 'Kalam', cursive;
+    font-family: 'Work Sans', sans-serif;
     font-style: italic;
     text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
 }
@@ -241,7 +241,7 @@ header p {
     align-items: center;
     border: 1px solid rgba(0, 255, 255, 0.3);
     flex-shrink: 0;
-    font-family: 'Federant', cursive, serif;
+    font-family: 'Work Sans', sans-serif;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
@@ -305,7 +305,7 @@ header p {
     margin-bottom: 1.2rem;
     font-size: 1.4rem;
     font-weight: 400;
-    font-family: 'Kalam', cursive;
+    font-family: 'Work Sans', sans-serif;
     color: #00ffff;
     text-shadow: 
         0 0 8px #00ffff,
@@ -416,18 +416,19 @@ header p {
     box-shadow: 0 0 10px #ef4444;
 }
 
-/* Response Section */
+/* Response Section - MAXIMIZED */
 .response-section {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid rgba(0, 255, 255, 0.3);
-    flex: 1;
+    flex: 3; /* Increased flex value to maximize */
     display: flex;
     flex-direction: column;
     min-height: 0;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    max-height: 70vh; /* Maximum height to ensure it's prominent */
 }
 
 .response-section h3 {
@@ -435,7 +436,7 @@ header p {
     font-size: 1.4rem;
     font-weight: 400;
     flex-shrink: 0;
-    font-family: 'Kalam', cursive;
+    font-family: 'Work Sans', sans-serif;
     color: #00ffff;
     text-shadow: 
         0 0 8px #00ffff,
@@ -444,22 +445,24 @@ header p {
     animation: neonGlow 1.8s ease-in-out infinite alternate;
 }
 
+/* Response Box with Improved Readability */
 .response-box {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    padding: 1.2rem;
-    font-size: 1rem;
-    line-height: 1.7;
+    padding: 1.5rem; /* Increased padding */
+    font-size: 1.1rem; /* Increased font size for better readability */
+    line-height: 1.8; /* Increased line height */
+    letter-spacing: 0.3px; /* Added letter spacing */
     border: 1px solid rgba(0, 255, 255, 0.3);
     flex: 1;
     overflow-y: auto;
     min-height: 0;
-    font-family: 'Federant', cursive, serif;
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; /* More readable font */
     box-shadow: 
         0 0 15px rgba(0, 255, 255, 0.3),
         inset 0 0 25px rgba(0, 0, 0, 0.4);
-    color: #ffffff;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    color: #f8f9fa; /* Improved text color for better contrast */
+    text-shadow: none; /* Removed text shadow for better readability */
 }
 
 .response-box::-webkit-scrollbar {
@@ -483,7 +486,7 @@ header p {
 .response-box .placeholder {
     opacity: 0.7;
     font-style: italic;
-    font-family: 'Kalam', cursive;
+    font-family: 'Work Sans', sans-serif;
     color: rgba(0, 255, 255, 0.8);
     text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
     text-align: center;
@@ -604,7 +607,7 @@ header p {
     font-size: 1.2rem;
     font-weight: 400;
     color: #00ffff;
-    font-family: 'Kalam', cursive;
+    font-family: 'Work Sans', sans-serif;
     text-shadow: 
         0 0 8px #00ffff,
         0 0 15px #00ffff,
@@ -623,7 +626,7 @@ header p {
 .instructions li {
     opacity: 0.9;
     font-size: 0.9rem;
-    font-family: 'Federant', cursive, serif;
+    font-family: 'Work Sans', sans-serif;
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
     padding: 0.5rem;
@@ -682,7 +685,7 @@ header p {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     border-left: 4px solid rgba(0, 255, 255, 0.5);
-    font-family: 'Federant', cursive, serif;
+    font-family: 'Work Sans', sans-serif;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
@@ -753,7 +756,7 @@ header p {
     padding: 0.6rem 1rem;   
     font-size: 0.95em;
     color: rgba(255, 255, 255, 0.85);
-    font-family: 'Noto Sans Arabic', 'Federant', cursive, serif;
+    font-family: 'Work Sans', sans-serif;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 6px;
     border-left: 2px solid rgba(0, 255, 255, 0.3);
@@ -1078,7 +1081,7 @@ header p {
 .audio-container h4 {
     color: #10b981;
     margin-bottom: 1rem;
-    font-family: 'Kalam', cursive;
+    font-family: 'Work Sans', sans-serif;
     font-size: 1.3rem;
     font-weight: 400;
     text-shadow: 0 0 8px #10b981;
@@ -1162,7 +1165,7 @@ header p {
     line-height: 1.8;
     direction: ltr;
     text-align: left;
-    font-family: 'Federant', cursive, serif;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .formatted-content p:lang(ar),
@@ -1315,7 +1318,7 @@ header p {
     
     header p { 
         font-size: 1.1rem; 
-        font-family: 'Kalam', cursive;
+        font-family: 'Work Sans', sans-serif;
     }
     
     .session-info { 
@@ -1395,7 +1398,7 @@ header p {
     .input-controls h3,
     .response-section h3,
     .instructions h4 {
-        font-family: 'Kalam', cursive;
+        font-family: 'Work Sans', sans-serif;
         font-size: 1.2rem;
     }
     
