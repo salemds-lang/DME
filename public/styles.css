@@ -865,15 +865,15 @@ header p {
 /* Response Section - MAXIMIZED */
 .response-section {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
     padding: 2rem; /* Increased from 1.5rem */
     border-radius: 12px;
     border: 1px solid rgba(0, 255, 255, 0.3);
     flex: 2; /* Increased from 1 to take more space */
     display: flex;
     flex-direction: column;
-    min-height: 400px; /* Increased minimum height */
-    max-height: 70vh; /* Allow it to take more vertical space */
+    min-height: 600px; /* Increased minimum height */
+    max-height: 90vh; /* Allow it to take more vertical space */
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
@@ -882,7 +882,7 @@ header p {
     font-size: 1.4rem;
     font-weight: 400;
     flex-shrink: 0;
-    font-family: 'Kalam', cursive;
+    font-family: 'Mozilla Headline', cursive;
     color: #00ffff;
     text-shadow: 
         0 0 8px #00ffff,
