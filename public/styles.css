@@ -674,364 +674,6 @@ header p {
     border-right: 4px solid rgba(0, 255, 255, 0.5) !important;
 }
 
-/* Animations */
-@keyframes neonPulse {
-    0%, 100% {
-        text-shadow:
-            0 0 5px currentColor,
-            0 0 10px currentColor,
-            0 0 15px currentColor,
-            0 0 20px currentColor;
-    }
-    50% {
-        text-shadow:
-            0 0 2px currentColor,
-            0 0 5px currentColor,
-            0 0 8px currentColor,
-            0 0 12px currentColor;
-    }
-}
-
-@keyframes neonGlow {
-    0% {
-        text-shadow: 
-            0 0 5px currentColor,
-            0 0 10px currentColor,
-            0 0 15px currentColor;
-    }
-    100% {
-        text-shadow: 
-            0 0 10px currentColor,
-            0 0 20px currentColor,
-            0 0 30px currentColor;
-    }
-}
-
-@keyframes subtleGlow {
-    0% {
-        text-shadow: 
-            0 0 3px currentColor,
-            0 0 6px currentColor,
-            0 0 9px currentColor;
-    }
-    100% {
-        text-shadow: 
-            0 0 6px currentColor,
-            0 0 12px currentColor,
-            0 0 18px currentColor;
-    }
-}
-
-@keyframes statusPulse {
-    0%, 100% { 
-        opacity: 1; 
-        transform: scale(1); 
-    }
-    50% { 
-        opacity: 0.7; 
-        transform: scale(1.05); 
-    }
-}
-
-@keyframes recordPulse {
-    0%, 100% { 
-        transform: scale(1); 
-        box-shadow: 0 0 20px rgba(231, 76, 60, 0.6); 
-    }
-    50% { 
-        transform: scale(1.05); 
-        box-shadow: 0 0 30px rgba(231, 76, 60, 0.8); 
-    }
-}
-
-@keyframes recordingBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-}
-
-@keyframes pulseDot {
-    0%, 100% { 
-        transform: scale(1); 
-        opacity: 1; 
-    }
-    50% { 
-        transform: scale(1.2); 
-        opacity: 0.7; 
-    }
-}
-
-@keyframes modalFadeIn {
-    from { 
-        opacity: 0; 
-        transform: scale(0.9); 
-    }
-    to { 
-        opacity: 1; 
-        transform: scale(1); 
-    }
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
-    .container { 
-        padding: 0.75rem; 
-        gap: 0.8rem;
-    }
-    
-    header h1 { 
-        font-size: 2rem; 
-        font-family: 'Work Sans', sans-serif;
-        font-weight: 800;
-    }
-    
-    header p { 
-        font-size: 1.1rem; 
-        font-family: 'Kalam', cursive;
-    }
-    
-    .session-info { 
-        flex-direction: column; 
-        gap: 0.8rem; 
-        text-align: center; 
-        padding: 1rem; 
-    }
-    
-    .input-group { 
-        flex-wrap: wrap; 
-        gap: 1rem; 
-    }
-    
-    .input-group input { 
-        min-width: 0; 
-        flex: 1; 
-        order: 1; 
-        font-size: 16px; /* Prevent zoom on iOS */
-    }
-    
-    .input-group button:not(.record-btn) { 
-        order: 2; 
-        flex: 1; 
-        min-width: 140px; 
-    }
-    
-    .record-btn { 
-        order: 3; 
-        width: 55px !important; 
-        height: 55px !important; 
-        font-size: 1.3rem !important; 
-        min-width: 55px !important; 
-    }
-    
-    .recording-indicator { 
-        order: 4; 
-        width: 100%; 
-        justify-content: center; 
-        margin-left: 0; 
-        margin-top: 0.8rem; 
-        font-size: 0.9rem;
-    }
-    
-    /* Mobile Quick Guide - Even More Minimized */
-    .instructions {
-        padding: 0.4rem 0.8rem;
-        min-height: 50px;
-        max-height: 60px;
-    }
-    
-    .instructions h4 {
-        font-size: 0.9rem;
-        margin-bottom: 0.3rem;
-    }
-    
-    .instructions li {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.4rem;
-    }
-    
-    .instructions ul { 
-        flex-direction: column; 
-        gap: 0.8rem; 
-        text-align: center;
-    }
-    
-    /* Mobile Response Section - Maximized */
-    .response-section {
-        padding: 1.5rem;
-        min-height: 300px;
-        max-height: 60vh;
-    }
-    
-    .response-box {
-        padding: 1.5rem;
-        font-size: 1rem;
-        line-height: 1.7;
-    }
-    
-    .response-box .placeholder {
-        padding: 2rem;
-        font-size: 1.1rem;
-    }
-    
-    .modal-content { 
-        max-width: 95vw; 
-        max-height: 95vh; 
-        margin: 1rem; 
-    }
-    
-    .property-thumbnail, 
-    .image-error { 
-        width: 140px; 
-        height: 90px; 
-    }
-    
-    .image-container {
-        min-width: 140px;
-        min-height: 90px;
-    }
-    
-    .property-images { 
-        justify-content: center; 
-    }
-    
-    .input-controls h3,
-    .response-section h3,
-    .instructions h4 {
-        font-family: 'Kalam', cursive;
-        font-size: 1.2rem;
-    }
-    
-    .property-header {
-        font-family: 'Work Sans', sans-serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-    }
-    
-    .property-feature {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    
-    .feature-icon {
-        margin-right: 0.5rem;
-        font-size: 1.2rem;
-    }
-    
-    .contact-link {
-        display: block;
-        margin: 0.8rem 0;
-        text-align: center;
-        padding: 1rem;
-        font-size: 0.9rem;
-    }
-    
-    .sound-toggle-btn {
-        top: 15px;
-        right: 15px;
-        padding: 10px 16px;
-        font-size: 12px;
-    }
-    
-    .audio-controls {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-    
-    .audio-controls button {
-        width: 100%;
-        padding: 1rem;
-        font-size: 1rem;
-    }
-}
-
-/* Tablet Responsive Design */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .container {
-        max-width: 100%;
-        padding: 1.5rem;
-    }
-    
-    header h1 {
-        font-size: 2.2rem;
-    }
-    
-    .input-group {
-        gap: 1.2rem;
-    }
-    
-    .record-btn {
-        width: 60px !important;
-        height: 60px !important;
-    }
-    
-    .property-thumbnail,
-    .image-error {
-        width: 160px;
-        height: 110px;
-    }
-    
-    .image-container {
-        min-width: 160px;
-        min-height: 110px;
-    }
-}
-
-/* High DPI Display Support */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .neon-text,
-    .neon-text-sub,
-    .property-header {
-        text-shadow: 
-            0 0 2px currentColor,
-            0 0 4px currentColor,
-            0 0 8px currentColor,
-            0 0 16px currentColor;
-    }
-}
-
-/* Print Styles */
-@media print {
-    #bg-video,
-    .sound-toggle-btn,
-    .input-controls,
-    .diagnostics,
-    .instructions {
-        display: none !important;
-    }
-    
-    body {
-        background: white !important;
-        color: black !important;
-    }
-    
-    .container {
-        max-width: none !important;
-        height: auto !important;
-        overflow: visible !important;
-    }
-    
-    .response-box {
-        background: white !important;
-        color: black !important;
-        border: 1px solid #ccc !important;
-        box-shadow: none !important;
-    }
-    
-    .property-item {
-        border: 1px solid #ccc !important;
-        box-shadow: none !important;
-        background: white !important;
-        page-break-inside: avoid;
-    }
-}, 255, 0.5);
-    box-shadow: none;
-}
-
 /* Session Info */
 .session-info {
     background: rgba(255, 255, 255, 0.1);
@@ -1569,4 +1211,365 @@ header p {
     margin: 0.5rem 0 0.5rem 2rem;
     padding: 0.6rem 1rem;   
     font-size: 0.95em;
-    color: rgba(255, 255
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border-left: 2px solid rgba(0, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes neonPulse {
+    0%, 100% {
+        text-shadow:
+            0 0 5px currentColor,
+            0 0 10px currentColor,
+            0 0 15px currentColor,
+            0 0 20px currentColor;
+    }
+    50% {
+        text-shadow:
+            0 0 2px currentColor,
+            0 0 5px currentColor,
+            0 0 8px currentColor,
+            0 0 12px currentColor;
+    }
+}
+
+@keyframes neonGlow {
+    0% {
+        text-shadow: 
+            0 0 5px currentColor,
+            0 0 10px currentColor,
+            0 0 15px currentColor;
+    }
+    100% {
+        text-shadow: 
+            0 0 10px currentColor,
+            0 0 20px currentColor,
+            0 0 30px currentColor;
+    }
+}
+
+@keyframes subtleGlow {
+    0% {
+        text-shadow: 
+            0 0 3px currentColor,
+            0 0 6px currentColor,
+            0 0 9px currentColor;
+    }
+    100% {
+        text-shadow: 
+            0 0 6px currentColor,
+            0 0 12px currentColor,
+            0 0 18px currentColor;
+    }
+}
+
+@keyframes statusPulse {
+    0%, 100% { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 0.7; 
+        transform: scale(1.05); 
+    }
+}
+
+@keyframes recordPulse {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 0 20px rgba(231, 76, 60, 0.6); 
+    }
+    50% { 
+        transform: scale(1.05); 
+        box-shadow: 0 0 30px rgba(231, 76, 60, 0.8); 
+    }
+}
+
+@keyframes recordingBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes pulseDot {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+    50% { 
+        transform: scale(1.2); 
+        opacity: 0.7; 
+    }
+}
+
+@keyframes modalFadeIn {
+    from { 
+        opacity: 0; 
+        transform: scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .container { 
+        padding: 0.75rem; 
+        gap: 0.8rem;
+    }
+    
+    header h1 { 
+        font-size: 2rem; 
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 800;
+    }
+    
+    header p { 
+        font-size: 1.1rem; 
+        font-family: 'Kalam', cursive;
+    }
+    
+    .session-info { 
+        flex-direction: column; 
+        gap: 0.8rem; 
+        text-align: center; 
+        padding: 1rem; 
+    }
+    
+    .input-group { 
+        flex-wrap: wrap; 
+        gap: 1rem; 
+    }
+    
+    .input-group input { 
+        min-width: 0; 
+        flex: 1; 
+        order: 1; 
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .input-group button:not(.record-btn) { 
+        order: 2; 
+        flex: 1; 
+        min-width: 140px; 
+    }
+    
+    .record-btn { 
+        order: 3; 
+        width: 55px !important; 
+        height: 55px !important; 
+        font-size: 1.3rem !important; 
+        min-width: 55px !important; 
+    }
+    
+    .recording-indicator { 
+        order: 4; 
+        width: 100%; 
+        justify-content: center; 
+        margin-left: 0; 
+        margin-top: 0.8rem; 
+        font-size: 0.9rem;
+    }
+    
+    /* Mobile Quick Guide - Even More Minimized */
+    .instructions {
+        padding: 0.4rem 0.8rem;
+        min-height: 50px;
+        max-height: 60px;
+    }
+    
+    .instructions h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .instructions li {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .instructions ul { 
+        flex-direction: column; 
+        gap: 0.8rem; 
+        text-align: center;
+    }
+    
+    /* Mobile Response Section - Maximized */
+    .response-section {
+        padding: 1.5rem;
+        min-height: 300px;
+        max-height: 60vh;
+    }
+    
+    .response-box {
+        padding: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .response-box .placeholder {
+        padding: 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .modal-content { 
+        max-width: 95vw; 
+        max-height: 95vh; 
+        margin: 1rem; 
+    }
+    
+    .property-thumbnail, 
+    .image-error { 
+        width: 140px; 
+        height: 90px; 
+    }
+    
+    .image-container {
+        min-width: 140px;
+        min-height: 90px;
+    }
+    
+    .property-images { 
+        justify-content: center; 
+    }
+    
+    .input-controls h3,
+    .response-section h3,
+    .instructions h4 {
+        font-family: 'Kalam', cursive;
+        font-size: 1.2rem;
+    }
+    
+    .property-header {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+    
+    .property-feature {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .feature-icon {
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+    }
+    
+    .contact-link {
+        display: block;
+        margin: 0.8rem 0;
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .sound-toggle-btn {
+        top: 15px;
+        right: 15px;
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+    
+    .audio-controls {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .audio-controls button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Tablet Responsive Design */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .input-group {
+        gap: 1.2rem;
+    }
+    
+    .record-btn {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .property-thumbnail,
+    .image-error {
+        width: 160px;
+        height: 110px;
+    }
+    
+    .image-container {
+        min-width: 160px;
+        min-height: 110px;
+    }
+}
+
+/* High DPI Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .neon-text,
+    .neon-text-sub,
+    .property-header {
+        text-shadow: 
+            0 0 2px currentColor,
+            0 0 4px currentColor,
+            0 0 8px currentColor,
+            0 0 16px currentColor;
+    }
+}
+
+/* Print Styles */
+@media print {
+    #bg-video,
+    .sound-toggle-btn,
+    .input-controls,
+    .diagnostics,
+    .instructions {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .container {
+        max-width: none !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    
+    .response-box {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+    }
+    
+    .property-item {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        background: white !important;
+        page-break-inside: avoid;
+    }
+}
