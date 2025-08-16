@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏠 DME Real Estate Assistant</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&family=Kalam:wght@300;400;700&family=Federant&family=Noto+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop id="bg-video">
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Sound Toggle Button -->
+    <button id="sound-toggle" class="sound-toggle-btn">🔊 Enable Sound</button>
+
+    <div class="container">
+        <header>
+            <h1 class="neon-text">🏠 DME Real Estate Assistant</h1>
+            <p class="neon-text-sub">Your AI-powered real estate assistant</p>
+        </header>
+
+        <div class="session-info">
+            <span class="neon-text-small">Session ID: <code id="sessionId">Loading...</code></span>
+            <div class="status neon-text-small" id="status">Ready</div>
+        </div>
+
+        <!-- Combined Input Controls -->
+        <div class="input-controls">
+            <h3 class="neon-text-sub">💬 Send Message or 🎤 Record Voice</h3>
+            <div class="input-group">
+                <input type="text" id="textInput" class="neon-input" placeholder="Type your message here..." maxlength="500">
+                <button onclick="sendMessage()" id="sendButton" class="neon-button">Send</button>
+                <button id="recordBtn" class="record-btn neon-button">🎤</button>
+                <div class="recording-indicator" id="recordingIndicator">
+                    <div class="pulse-dot"></div>
+                    <span class="neon-text-small">Recording...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Response Section - Maximized -->
+        <div class="response-section">
+            <h3 class="neon-text-sub">📋 Response:</h3>
+            <div id="response" class="response-box">
+                <p class="placeholder neon-text-small">Send a text message or hold the microphone to record your question...</p>
+            </div>
+        </div>
+
+        <!-- Diagnostics Section - Only Health Check -->
+        <div class="diagnostics">
+            <button id="healthCheck" class="neon-button">🔍 Health Check</button>
+        </div>
+
+        <!-- Instructions - Compact -->
+        <div class="instructions">
+            <h4 class="neon-text-sub">How to use:</h4>
+            <ul>
+                <li class="neon-text-small">💬 <strong>Text:</strong> Type and click Send</li>
+                <li class="neon-text-small">🎤 <strong>Voice:</strong> Click microphone to start/stop recording</li>
+                <li class="neon-text-small">🔍 <strong>Troubleshoot:</strong> Use Health Check if needed</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-backdrop" onclick="closeImageModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle" class="neon-text-sub">Property Image</h3>
+                <button class="modal-close neon-button" onclick="closeImageModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-loading" id="modalLoading">
+                    <div class="loading-spinner"></div>
+                    <span class="neon-text-small">Loading image...</span>
+                </div>
+                <img id="modalImage" class="modal-image" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Arabic text detection and RTL direction setting
+        function detectAndSetArabic() {
+            const responseBox = document.getElementById('response');
+            const arabicRegex = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
+            
+            // Check for Arabic text in response box
+            if (responseBox && responseBox.textContent) {
+                const hasArabic = arabicRegex.test(responseBox.textContent);
+                
+                if (hasArabic) {
+                    responseBox.classList.add('rtl-content');
+                    responseBox.setAttribute('dir', 'rtl');
+                    responseBox.setAttribute('lang', 'ar');
+                    
+                    // Apply to child elements
+                    const childElements = responseBox.querySelectorAll('p, div, span');
+                    childElements.forEach(element => {
+                        if (arabicRegex.test(element.textContent)) {
+                            element.classList.add('rtl-content');
+                            element.setAttribute('dir', 'rtl');
+                            element.setAttribute('lang', 'ar');
+                        }
+                    });
+                } else {
+                    responseBox.classList.remove('rtl-content');
+                    responseBox.removeAttribute('dir');
+                    responseBox.removeAttribute('lang');
+                }
+            }
+        }
+        
+        // Observer to watch for content changes
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                    detectAndSetArabic();
+                }
+            });
+        });
+        
+        // Start observing when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const responseBox = document.getElementById('response');
+            if (responseBox) {
+                observer.observe(responseBox, {
+                    childList: true,
+                    subtree: true,
+                    characterData: true
+                });
+            }
+            
+            // Initial check
+            detectAndSetArabic();
+        });
+    </script>
+</body>
+</html>
