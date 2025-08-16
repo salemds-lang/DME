@@ -1143,12 +1143,13 @@ header p {
     background: rgba(255, 255, 255, 0.08); /* Better contrast */
     border-radius: 10px;
     border-left: 4px solid rgba(0, 255, 255, 0.5);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Federant', cursive, serif;
+    font-family: 'Quicksand', sans-serif; /* 🔹 Changed font */
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
     transition: all 0.3s ease;
-    font-size: 1rem; /* Ensure readable font size */
+    font-size: 1.4rem; /* Ensure readable font size */
     line-height: 1.6;
 }
+
 
 .property-feature:hover {
     background: rgba(255, 255, 255, 0.08);
