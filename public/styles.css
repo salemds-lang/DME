@@ -1039,19 +1039,21 @@ header p {
         inset 0 0 25px rgba(255, 0, 255, 0.1);
 }
 
-/* Instructions - MINIMIZED QUICK GUIDE */
+/* Instructions - VISIBLE QUICK GUIDE */
 .instructions {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    padding: 0.5rem 1rem; /* Reduced from 1rem */
-    border-radius: 8px; /* Reduced from 12px */
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 2px solid rgba(0, 255, 255, 0.3);
     flex-shrink: 0;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
-    min-height: 60px; /* Set minimum height */
-    max-height: 80px; /* Limit maximum height */
-    overflow: hidden; /* Hide overflow content */
-    transition: max-height 0.3s ease; /* Smooth transition */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    min-height: auto;
+    max-height: none;
+    overflow: visible;
 }
 
 .instructions h4 {
