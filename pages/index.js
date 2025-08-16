@@ -121,6 +121,9 @@ export default function Home() {
             <li className="neon-text-small">
               🔍 <strong>Diagnostics:</strong> Use Health Check if experiencing issues
             </li>
+            <li className="neon-text-small">
+              📱 <strong>Mobile:</strong> Optimized for all devices and screen sizes
+            </li>
           </ul>
         </div>
       </div>
