@@ -258,17 +258,30 @@ function formatPropertyText(text) {
         }
 
         if (!isPropertyFeature) {
-            // Handle image links
+            // Handle image links - FIXED VERSION
             if (line.includes('![Image')) {
                 flushPendingFeature();
                 
                 line = line.replace(/!\[Image \d+\]\((.*?)\)/g, (match, url) => {
                     const directUrl = convertGoogleDriveUrl(url);
+                    const imageId = 'img_' + Math.random().toString(36).substr(2, 9);
                     return `<div class="property-feature">
                         <span class="feature-icon">📸</span>
                         <div class="image-container">
-                            <img src="${directUrl}" alt="Property Image" class="property-thumbnail" onclick="openImageModal('${directUrl}')" onerror="this.parentNode.innerHTML='<div class=\\"image-error\\">Image failed to load</div>'" />
+                            <img 
+                                id="${imageId}"
+                                src="${directUrl}" 
+                                alt="Property Image" 
+                                class="property-thumbnail" 
+                                onclick="openImageModal('${directUrl}')"
+                                onload="handleImageLoad('${imageId}')"
+                                onerror="handleImageError('${imageId}')"
+                                style="display: block;"
+                            />
                             <span class="image-label">Click to enlarge</span>
+                            <div id="error_${imageId}" class="image-error" style="display: none;">
+                                ❌ Image failed to load
+                            </div>
                         </div>
                     </div>`;
                 });
@@ -288,6 +301,33 @@ function formatPropertyText(text) {
     }
 
     return formattedLines.join('');
+}
+
+// Image loading handlers - NEW FUNCTIONS
+function handleImageLoad(imageId) {
+    console.log('✅ Image loaded successfully:', imageId);
+    const img = document.getElementById(imageId);
+    const errorDiv = document.getElementById('error_' + imageId);
+    
+    if (img) {
+        img.style.display = 'block';
+    }
+    if (errorDiv) {
+        errorDiv.style.display = 'none';
+    }
+}
+
+function handleImageError(imageId) {
+    console.error('❌ Image failed to load:', imageId);
+    const img = document.getElementById(imageId);
+    const errorDiv = document.getElementById('error_' + imageId);
+    
+    if (img) {
+        img.style.display = 'none';
+    }
+    if (errorDiv) {
+        errorDiv.style.display = 'block';
+    }
 }
 
 // Image modal functions
@@ -681,6 +721,7 @@ async function processRecording() {
         updateResponse(`Processing error: ${error.message}`, true);
     }
 }
+
 function displayVoiceResponse(audioUrl) {
     const responseDiv = document.getElementById('response');
     if (!responseDiv) return;
@@ -872,6 +913,8 @@ window.sendMessage = sendTextMessage;
 window.openImageModal = openImageModal;
 window.closeImageModal = closeImageModal;
 window.downloadImage = downloadImage;
+window.handleImageLoad = handleImageLoad;
+window.handleImageError = handleImageError;
 
 // Make initializeApp globally available
 window.initializeApp = initializeApp;
